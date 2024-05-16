@@ -1,12 +1,10 @@
 from fastapi_login import LoginManager
-from datetime import datetime
 
 
 from fastapi import APIRouter, Depends, Response, status
 from dependency_injector.wiring import Provide, inject
 
 from src.application.ports.car import CarPort
-from src.application.models.car import Car
 
 from src.adapters.driving.rest.v1.login import manager
 
@@ -26,33 +24,14 @@ router = APIRouter()
 async def register_car(
     response: Response,
     car_request: RegisterCarV1Request,
-    car_port: CarPort = Depends(Provide[Container.car_repository]),
+    car_port: CarPort = Depends(Provide[Container.car_sale_adapter]),
     auth: LoginManager = Depends(manager)
 ) -> RegisterCarV1Response:
     """
     Register a car
     """
 
-    car = Car(
-        car_user_id=car_request.car_user_id,
-        car_brand=car_request.car_brand,
-        car_model=car_request.car_model,
-        car_year=car_request.car_year,
-        car_color=car_request.car_color,
-        car_price=car_request.car_price,
-        car_type=car_request.car_type,
-        car_condition=car_request.car_condition,
-        car_transmission=car_request.car_transmission,
-        car_mileage=car_request.car_mileage,
-        car_engine=car_request.car_engine,
-        car_fuel=car_request.car_fuel,
-        car_description=car_request.car_description,
-        car_armored=car_request.car_armored,
-        car_sold=car_request.car_sold,
-        car_created_at=datetime.now()
-    )
-
-    car = await car_port.register_car(car)
+    car = await car_port.register_car(car_request)
 
     response.status_code = status.HTTP_201_CREATED
 
@@ -64,34 +43,16 @@ async def register_car(
 async def update_car(
         response: Response,
         car_request: RegisterCarV1Request,
-        car_port: CarPort = Depends(Provide[Container.car_repository]),
+        car_port: CarPort = Depends(Provide[Container.car_sale_adapter]),
         auth: LoginManager = Depends(manager)
 ) -> RegisterCarV1Response:
     """
     Update a car
     """
-    car = Car(
-        car_id=car_request.car_id,
-        car_user_id=car_request.car_user_id,
-        car_brand=car_request.car_brand,
-        car_model=car_request.car_model,
-        car_year=car_request.car_year,
-        car_color=car_request.car_color,
-        car_price=car_request.car_price,
-        car_type=car_request.car_type,
-        car_condition=car_request.car_condition,
-        car_transmission=car_request.car_transmission,
-        car_mileage=car_request.car_mileage,
-        car_engine=car_request.car_engine,
-        car_fuel=car_request.car_fuel,
-        car_description=car_request.car_description,
-        car_armored=car_request.car_armored,
-        car_created_at=datetime.now()
-    )
 
-    car = await car_port.update_car(car)
+    car = await car_port.update_car(car_request)
 
-    response.status_code = status.HTTP_201_CREATED
+    response.status_code = status.HTTP_200_OK
 
     return car
 
@@ -101,7 +62,7 @@ async def update_car(
 async def delete_car(
         response: Response,
         car_id: int,
-        car_port: CarPort = Depends(Provide[Container.car_repository]),
+        car_port: CarPort = Depends(Provide[Container.car_sale_adapter]),
         auth: LoginManager = Depends(manager)
 ) -> DeleteCarV1Response:
     """

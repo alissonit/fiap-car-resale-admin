@@ -1,7 +1,7 @@
 from dependency_injector import containers, providers
 from sqlalchemy.ext.asyncio import create_async_engine
 
-from src.adapters.driven.repositories.cars import CarRepository
+from src.adapters.driven.rest.ms_fiap_car_resale.cars_sale import CarSaleAdapter
 from src.adapters.driven.repositories.users import UserRepository
 from src.configuration.settings import get_db_settings
 
@@ -16,6 +16,7 @@ class Container(containers.DeclarativeContainer):
         modules=["src.adapters.driving.rest.v1.cars",
                  "src.adapters.driving.rest.v1.users",
                  "src.adapters.driving.rest.v1.login",
+                 "src.adapters.driven.rest.ms_fiap_car_resale.cars_sale",
                  "src.adapters.driving.rest.v1.settings"]
     )
 
@@ -31,8 +32,8 @@ class Container(containers.DeclarativeContainer):
         isolation_level="AUTOCOMMIT"
     )
 
-    car_repository = providers.Factory(
-        CarRepository, engine=engine
+    car_sale_adapter = providers.Factory(
+        CarSaleAdapter, engine=engine
     )
 
     user_repository = providers.Factory(

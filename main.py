@@ -10,7 +10,7 @@ PATH_ROOT = "/fiap-car-resale/admin"
 container = Container()
 
 app = FastAPI(
-    title="Resale Car API ADMIN",
+    title="ADMIN resale Car API",
     description="API for managing cars for resale",
     version="1.0.0",
     openapi_url=f"{PATH_ROOT}/api/v1/openapi.json",
