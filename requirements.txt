@@ -6,6 +6,7 @@ async-timeout==4.0.3
 asyncpg==0.29.0
 attrs==23.2.0
 certifi==2024.2.2
+charset-normalizer==3.3.2
 click==8.1.7
 dependency-injector==4.41.0
 dnspython==2.6.1
@@ -42,6 +43,7 @@ PyJWT==2.8.0
 python-dotenv==1.0.1
 python-multipart==0.0.9
 PyYAML==6.0.1
+requests==2.31.0
 rich==13.7.1
 shellingham==1.5.4
 six==1.16.0
@@ -53,6 +55,7 @@ trio==0.21.0
 typer==0.12.3
 typing_extensions==4.11.0
 ujson==5.9.0
+urllib3==2.2.1
 uvicorn==0.29.0
 uvloop==0.19.0
 watchfiles==0.21.0
