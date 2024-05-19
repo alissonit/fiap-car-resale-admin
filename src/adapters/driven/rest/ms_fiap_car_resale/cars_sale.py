@@ -1,11 +1,10 @@
 import requests
 
 from src.application.models.car import Car
-from src.application.ports.car import CarPort
 from src.utils.parsers import car_parser
 
 
-class CarSaleAdapter(CarPort):
+class CarSaleAdapter:
     """
     Class Repository for Car
     """
@@ -23,7 +22,7 @@ class CarSaleAdapter(CarPort):
         Register Car
         """
 
-        data = car_parser(car)
+        data = await car_parser(car)
 
         response = requests.post(f"{self.car_sale_uri}/cars", json=data)
         return response.json()
@@ -33,7 +32,7 @@ class CarSaleAdapter(CarPort):
         Update Car
         """
 
-        data = car_parser(car)
+        data = await car_parser(car)
 
         response = requests.put(f"{self.car_sale_uri}/cars", json=data)
         return response.json()

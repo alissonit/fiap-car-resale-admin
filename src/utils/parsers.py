@@ -4,7 +4,7 @@ from src.application.models.car import Car
 async def car_parser(car: Car):
 
     data = {
-        "car_id": car.car_id if car.car_id else None,
+        "car_id": car.car_id if car.car_id else "",
         "car_armored": car.car_armored,
         "car_brand": car.car_brand,
         "car_color": car.car_color,

@@ -33,7 +33,7 @@ class Container(containers.DeclarativeContainer):
     )
 
     car_sale_adapter = providers.Factory(
-        CarSaleAdapter, engine=engine
+        CarSaleAdapter
     )
 
     user_repository = providers.Factory(

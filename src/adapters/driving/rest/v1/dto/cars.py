@@ -11,7 +11,7 @@ class RegisterCarV1Request(BaseModel):
     """
     Class Model for Register Car
     """
-    car_id: Optional[int]
+    car_id: Optional[int] = None
     car_user_id: int
     car_brand: str
     car_model: str
