@@ -50,7 +50,7 @@ http://localhost:8000/api/v1/docs
 
 
 ### Entregas
-- [ ] Login
+- [x] Login
 - [x] Cadastro de usuário
 - [x] Cadastrar um veículo para venda (Marca, modelo, ano, cor, preço)
 - [x] Editar os dados do veículo
