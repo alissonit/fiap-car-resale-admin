@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 5. Execute o projeto:
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --port 8000 --reload
 ```
 
 ## Tipo de Arquitetura
