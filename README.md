@@ -57,7 +57,7 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 - [x] Excluir um veículo
 - [x] Excluir um usuário
 
-### Test unitário
-
+### CI/CD
+- [] Implementar Github Actions
 - [] Implementar SonarQube
 - [] Cobertura de testes unitários acima de 80%
