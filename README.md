@@ -46,7 +46,7 @@ A arquitetura utilizada foi a hexagonal, onde o core da aplicação é independe
 
 ## Documentação
 A documentação da API pode ser acessada em:
-http://localhost:8000/api/v1/docs
+http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 
 
 ### Entregas do projeto
@@ -56,3 +56,8 @@ http://localhost:8000/api/v1/docs
 - [x] Editar os dados do veículo
 - [x] Excluir um veículo
 - [x] Excluir um usuário
+
+### Test unitário
+
+- [] Implementar SonarQube
+- [] Cobertura de testes unitários acima de 80%
