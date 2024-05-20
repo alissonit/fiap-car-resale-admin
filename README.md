@@ -61,3 +61,7 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 - [] Implementar Github Actions
 - [] Implementar SonarQube
 - [] Cobertura de testes unitários acima de 80%
+
+### Infraestrutura
+- [] Cluster Openshift Red Hat.
+- [x] Banco de dados PostgreSQL RDS AWS.
