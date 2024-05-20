@@ -49,8 +49,10 @@ A documentação da API pode ser acessada em:
 http://localhost:8000/api/v1/docs
 
 
-### Entregas
+### Entregas do projeto
 - [x] Login
 - [x] Cadastro de usuário
 - [x] Cadastrar um veículo para venda (Marca, modelo, ano, cor, preço)
 - [x] Editar os dados do veículo
+- [x] Excluir um veículo
+- [x] Excluir um usuário

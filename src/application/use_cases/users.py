@@ -107,5 +107,11 @@ class UserUseCase:
         """
 
         user = await user_port.delete_user(user_id)
+        
+        if user:
+            return user
 
-        return user.user_id
+        raise HTTPException(
+            status_code=404,
+            detail="User not found"
+        )

@@ -83,7 +83,7 @@ async def update_user(
     return user
 
 
-@router.delete("/api/v1/users{user_id}", response_model=DeleteUserV1Response)
+@router.delete("/api/v1/users/{user_id}", response_model=DeleteUserV1Response)
 async def delete_user(
     user_id: int,
     auth: LoginManager = Depends(manager)
@@ -94,4 +94,4 @@ async def delete_user(
 
     user = await UserUseCase.delete_user(user_id)
 
-    return user
+    return {"user_id": user}
