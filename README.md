@@ -54,6 +54,3 @@ http://localhost:8000/api/v1/docs
 - [x] Cadastro de usuário
 - [x] Cadastrar um veículo para venda (Marca, modelo, ano, cor, preço)
 - [x] Editar os dados do veículo
-- [ ] Disponibilizar um endpoint (webhook) para que a entidade que processa o pagamento
-consiga, a partir do código do pagamento, informar se o pagamento foi efetuado ou
-cancelado;
