@@ -1,16 +1,16 @@
 import os
+from datetime import timedelta
+
 from fastapi import Depends, APIRouter, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi_login.exceptions import InvalidCredentialsException
 from fastapi_login import LoginManager
 
-from src.configuration.dependency_injection import Container
 from dependency_injector.wiring import Provide, inject
+from src.configuration.dependency_injection import Container
 
 from src.application.ports.users import UserPort
 from src.application.models.users import User
-
-from datetime import timedelta
 
 
 try:
