@@ -19,7 +19,7 @@ class RegisterUserV1Request(BaseModel):
     user_password: str
     user_phone: str
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Register User
         """
@@ -45,7 +45,7 @@ class RegisterUserV1Response(BaseModel):
     user_created_at: Optional[datetime] = None
     user_updated_at: Optional[datetime] = None
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Register User Response
         """
@@ -72,7 +72,7 @@ class UpdateUserV1Request(BaseModel):
     user_created_at: Optional[datetime] = None
     user_updated_at: Optional[datetime] = None
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Update User
         """
@@ -96,7 +96,7 @@ class RegisterUserV1ListResponse(BaseModel):
 class DeleteUserV1Request(BaseModel):
     user_id: int
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Delete User
         """
@@ -111,7 +111,7 @@ class DeleteUserV1Request(BaseModel):
 class DeleteUserV1Response(BaseModel):
     user_id: int
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Delete User
         """

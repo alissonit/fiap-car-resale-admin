@@ -9,7 +9,7 @@ from src.adapters.driving.rest.v1.settings import get_db_settings
 
 from infrastructure.database.models.tables import Base
 
-# this is the Alembic Config object, which provides
+# this is the Alembic ConfigDict object, which provides
 # access to the values within the .ini file in use.
 config = context.config
 x_arguments = context.get_x_argument(as_dictionary=True)

@@ -14,7 +14,7 @@ class DBSettings(BaseSettings):
     db_uri: Optional[str]
     db_max_pool_size: int = 5
 
-    class Config:
+    class ConfigDict:
         env_prefix = 'DB_'
         env_file = '.env'
         env_file_encoding = 'utf-8'

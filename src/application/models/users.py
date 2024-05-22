@@ -20,7 +20,7 @@ class User(BaseModel):
     user_created_at: Optional[datetime] = None
     user_updated_at: Optional[datetime] = None
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Register User
         """

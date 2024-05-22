@@ -33,7 +33,7 @@ class RegisterCarV1Request(BaseModel):
     car_armored: bool
     car_sold: bool
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Register Car
         """
@@ -86,7 +86,7 @@ class RegisterCarV1Response(BaseModel):
     car_armored: bool
     car_sold: bool
 
-    class Config:
+    class ConfigDict:
         """
         Class config for List Car
         """
@@ -120,7 +120,7 @@ class CreateCarV1ListResponse(BaseModel):
 class DeleteCarV1Request(BaseModel):
     car_id: int
 
-    class Config:
+    class ConfigDict:
         """
         Class config for delete Car
         """
@@ -135,7 +135,7 @@ class DeleteCarV1Request(BaseModel):
 class DeleteCarV1Response(BaseModel):
     car_id: int
 
-    class Config:
+    class ConfigDict:
         """
         Class config for delete Car
         """

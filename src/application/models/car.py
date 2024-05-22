@@ -29,7 +29,7 @@ class Car(BaseModel):
     car_updated_at: Optional[datetime] = None
     car_deleted_at: Optional[datetime] = None
 
-    class Config:
+    class ConfigDict:
         """
         Class config for Car
         """
