@@ -51,11 +51,14 @@ async def load_user(
 
     user = await user_port.list_by_user_email(email)
 
-    if fist_login:
-        return user
-    if user.access_token:
-        return user
-    raise InvalidCredentialsException
+    try:
+        if fist_login:
+            return user
+        if user.access_token:
+            return user
+        raise InvalidCredentialsException
+    except AttributeError:
+        raise InvalidCredentialsException
 
 
 @router.post('/auth/logout')

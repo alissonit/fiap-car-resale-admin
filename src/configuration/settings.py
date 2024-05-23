@@ -12,7 +12,7 @@ class DBSettings(BaseSettings):
     db_user: str
     db_password: str
     db_uri: Optional[str]
-    db_max_pool_size: int = 5
+    db_max_pool_size: int = 10
 
     class ConfigDict:
         env_prefix = 'DB_'

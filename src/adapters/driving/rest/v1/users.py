@@ -41,16 +41,16 @@ async def list_users(
     return users
 
 
-@router.get("/api/v1/users/{user_name}", response_model=RegisterUserV1Response)
+@router.get("/api/v1/users/{user_email}", response_model=RegisterUserV1Response)
 async def list_by_user_email(
-    user_name: str,
+    user_email: str,
     auth: LoginManager = Depends(manager)
 ):
     """
-    List user by user_name
+    List user by user_email
     """
 
-    user = await UserUseCase.list_by_user_email(user_name)
+    user = await UserUseCase.list_by_user_email(user_email)
 
     return user
 

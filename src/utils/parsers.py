@@ -19,7 +19,7 @@ async def car_parser(car: Car):
         "car_transmission": car.car_transmission,
         "car_type": car.car_type,
         "car_user_id": car.car_user_id,
-        "car_year": car.car_user_id
+        "car_year": car.car_year
     }
 
     return data
