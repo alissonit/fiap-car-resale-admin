@@ -36,7 +36,18 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-5. Execute o projeto:
+5. crie um arquivo .env na raiz do projeto com as seguintes variáveis de ambiente:
+```bash
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+DB_NAME=
+DB_URI=
+DB_MAX_POOL_SIZE=
+```
+
+6. Execute o projeto:
 ```bash
 uvicorn main:app --port 8000 --reload
 ```
