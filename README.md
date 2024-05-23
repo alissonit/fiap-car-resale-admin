@@ -65,4 +65,5 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 
 ### Infraestrutura
 - [] Cluster Openshift Red Hat.
+- [] Objetos do kubernetes (Deployment, Service, Ingress, ConfigMap, Secret).
 - [x] Banco de dados PostgreSQL RDS AWS.
