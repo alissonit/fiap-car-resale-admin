@@ -58,12 +58,12 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 - [x] Excluir um usuário
 
 ### CI/CD
-- [] Implementar Github Actions
-- [] Implementar SonarQube
+- [ ] Implementar Github Actions
+- [ ] Implementar SonarQube
 - [x] Cobertura de testes unitários acima de 80%
 - [x] Deploy no Openshift
 
 ### Infraestrutura
-- [] Cluster Openshift Red Hat.
-- [] Objetos do kubernetes (Deployment, Service, Ingress, ConfigMap, Secret).
+- [ ] Cluster Openshift Red Hat.
+- [ ] Objetos do kubernetes (Deployment, Service, Ingress, ConfigMap, Secret).
 - [x] Banco de dados PostgreSQL RDS AWS.
