@@ -1,14 +1,14 @@
-# Fiap Car Resale
+# Fiap Car Resale Admin
 Projeto desenvolvido para a pós-graduação em Arquiteura de Software da FIAP.
 
 ## Objetivo
-O objetivo deste projeto é criar um sistema de revenda de carros, onde o usuário poderá cadastrar carros para venda e também comprar carros.
+O objetivo deste projeto é criar um sistema de revenda de veículos, onde o usuário poderá cadastrar veículos para venda e também comprar veículos.
 
 ## Funcionalidades
-- Cadastro de carros
-- Compra de carros
-- Listagem de carros
-- Exclusão de carros
+- Cadastro de veículos
+- Compra de veículos
+- Listagem de veículos
+- Exclusão de veículos
 
 ## Tecnologias
 - Python
