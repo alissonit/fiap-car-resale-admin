@@ -3,7 +3,7 @@ name: Pipeline fiap-car-resale-admin
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   pipeline:
