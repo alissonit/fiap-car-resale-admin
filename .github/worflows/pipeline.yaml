@@ -1,0 +1,52 @@
+name: Pipeline fiap-car-resale-admin
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: docker-practice/actions-setup-docker@master
+        timeout-minutes: 12
+      - run: |
+          set -x
+          docker version
+      - name: AWS config SSO
+        run: |
+          mkdir -p ~/.aws
+          echo "[profile fiap-env]
+          sso_start_url = ${{ secrets.SSO_START_URL }}
+          sso_region = sa-east-1
+          sso_account_id = ${{ secrets.ACCOUNT_ID }}
+          sso_role_name = ${{ secrets.SSO_ROLE_NAME }}
+          region = sa-east-1
+          output = json" > ~/.aws/config
+
+      - name: AWS login SSO
+        run: |
+          aws sso login --profile fiap-env
+      - name: Docker login ecr
+        run: |
+          aws ecr get-login-password --region sa-east-1 --profile fiap-env | docker login --username AWS --password-stdin ${{ secrets.ECR_URL }}
+      
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Docker build
+        run: |
+          docker build -t ${{ secrets.ECR_URL }}:0.0.1 --progress=plain .
+          docker push ${{ secrets.ECR_URL }}:0.0.1
+      
+      - name: Deploy ECS
+        run: |
+          aws ecs update-service --cluster ${{ secrets.ECS_CLUSTER }} --service ${{ secrets.ECS_SERVICE }} --force-new-deployment --profile fiap-env
