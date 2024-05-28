@@ -32,6 +32,9 @@ jobs:
         run: |
           docker build -t alissonskt/fiap-car-resale-admin:1.0.0 .
       
+      - name: Docker push
+        run: |
+          docker push alissonskt/fiap-car-resale-admin:1.0.0
       - name: oc import image
         run: |
          oc import-image image-registry.openshift-image-registry.svc:5000/alissonskt-dev/fiap-car-resale-admin:1.0.0 --from=alissonskt/fiap-car-resale-admin:1.0.0 --confirm
