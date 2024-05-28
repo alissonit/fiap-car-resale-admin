@@ -17,6 +17,7 @@ ENV DB_NAME=fiapdbadmin
 ENV DB_URI=""
 ENV DB_MAX_POOL_SIZE=10
 
+USER root
 
 WORKDIR ${APP_HOME}
 
@@ -32,7 +33,5 @@ ENV PORT 8000
 EXPOSE $PORT
 
 WORKDIR $APP_HOME
-
-USER root
 
 ENTRYPOINT uvicorn main:app --host 0.0.0.0 --port 8000 --workers 1 --log-level info
