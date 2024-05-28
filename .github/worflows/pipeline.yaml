@@ -3,7 +3,7 @@ name: Pipeline fiap-car-resale-admin
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   pipeline:
@@ -15,38 +15,31 @@ jobs:
       - run: |
           set -x
           docker version
-      - name: AWS config SSO
-        run: |
-          mkdir -p ~/.aws
-          echo "[profile fiap-env]
-          sso_start_url = ${{ secrets.SSO_START_URL }}
-          sso_region = sa-east-1
-          sso_account_id = ${{ secrets.ACCOUNT_ID }}
-          sso_role_name = ${{ secrets.SSO_ROLE_NAME }}
-          region = sa-east-1
-          output = json" > ~/.aws/config
 
-      - name: AWS login SSO
-        run: |
-          aws sso login --profile fiap-env
-      - name: Docker login ecr
-        run: |
-          aws ecr get-login-password --region sa-east-1 --profile fiap-env | docker login --username AWS --password-stdin ${{ secrets.ECR_URL }}
+      - name: Install oc
+        uses: redhat-actions/openshift-tools-installer@v1
+        with:
+          oc: 4
       
+      - name: oc login
+        run: |
+          oc login --token=${{ secrets.SECRET_OPENSHIFT }} --server=${{ secrets.OPENSHIFT_SERVER }}
+
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: SonarCloud Scan
-        uses: sonarsource/sonarcloud-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
       - name: Docker build
         run: |
-          docker build -t ${{ secrets.ECR_URL }}:0.0.1 --progress=plain .
-          docker push ${{ secrets.ECR_URL }}:0.0.1
+          docker build -t alissonskt/fiap-car-resale-admin:1.0.0 .
       
-      - name: Deploy ECS
+      - name: oc import image
         run: |
-          aws ecs update-service --cluster ${{ secrets.ECS_CLUSTER }} --service ${{ secrets.ECS_SERVICE }} --force-new-deployment --profile fiap-env
+         oc import-image image-registry.openshift-image-registry.svc:5000/alissonskt-dev/fiap-car-resale-admin:1.0.0 --from=alissonskt/fiap-car-resale-admin:1.0.0 --confirm
+
+      - name: Deploy App
+        run: |
+          oc patch dc fiap-car-resale-admin -p '{"spec":{"template":{"spec":{"containers":[{"name":"fiap-car-resale-admin","image":"default-route-openshift-image-registry.apps.sandbox-m2.ll9k.p1.openshiftapps.com/alissonskt-dev/fiap-car-resale-admin:1.0.0"}]}}}}' -n alissonskt-dev
+      
+      - name: oc rollout 
+        run: |
+          oc rollout status dc/fiap-car-resale-admin -n alissonskt-dev
