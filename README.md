@@ -83,3 +83,8 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 - [ ] Cluster Openshift Red Hat.
 - [ ] Objetos do kubernetes (Deployment, Service, Ingress, ConfigMap, Secret).
 - [x] Banco de dados PostgreSQL RDS AWS.
+
+# Evidências
+
+### Coberura de testes em 80%
+![image](/images/coverage-80.png)
