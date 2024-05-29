@@ -81,7 +81,7 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 
 ### Infraestrutura
 - [x] Cluster Openshift Red Hat.
-- [] Objetos do kubernetes (Deployment, Service, Ingress).
+- [x] Objetos do kubernetes (Deployment, Service, Ingress).
 - [x] Banco de dados PostgreSQL RDS AWS.
 
 # Evidências
@@ -89,4 +89,29 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 ### Coberura de testes em 80%
 ![image](/images/coverage-80.png)
 
-link do html da cobertura de testes: [coverage](/tests/index.html)
+link do html da cobertura de testes:
+
+[coverage](/tests/index.html)
+
+### CI/CD
+
+Github Actions:
+
+![image](/images/action.png)
+
+link do github actions: [actions](https://github.com/alissonit/fiap-car-resale-admin/actions/runs/9263097886/job/25481037030)
+
+### Documentação da API
+![image](/images/openapi-docs.png)
+
+### Deploy K8s (Redhat Openshift)
+
+![image](/images/openshift.png)
+
+Evidências dos recursos criados no Openshift:
+
+![image](/images/resources-ocp.png)
+
+Recursos criados no Openshift:
+
+[Kubernetes Resources](/infrastructure/kubernetes-openshift)

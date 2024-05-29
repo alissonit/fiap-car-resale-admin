@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2024-05-29T01:22:43Z"
+  name: fiap-car-resale-admin-svc
+  namespace: alissonskt-dev
+  resourceVersion: "4380812239"
+  uid: dca1e116-bcf6-4fd6-b208-08f76d1005eb
+spec:
+  clusterIP: 172.30.61.208
+  clusterIPs:
+  - 172.30.61.208
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: fiap-car-resale-admin
+  sessionAffinity: None
+  type: ClusterIP
