@@ -75,7 +75,6 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 
 ### CI/CD
 - [x] Implementar Github Actions
-- [ ] Implementar SonarQube
 - [x] Cobertura de testes unitários acima de 80%
 - [x] Deploy no Openshift
 
