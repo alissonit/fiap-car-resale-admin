@@ -88,3 +88,5 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 
 ### Coberura de testes em 80%
 ![image](/images/coverage-80.png)
+
+link do html da cobertura de testes: [coverage](/htmlcov/index.html)
