@@ -25,11 +25,11 @@ O objetivo deste projeto é criar um sistema de revenda de veículos, onde o usu
 Para executar o projeto, siga os passos abaixo:
 1. Clone este repositório:
 ```bash
-git clone https://github.com/alissonit/fiap-car-resale.git
+git clone https://github.com/alissonit/fiap-car-resale-admin.git
 ```
 2. Acesse a pasta do projeto:
 ```bash
-cd fiap-car-resale
+cd fiap-car-resale-admin
 ```
 
 3 importante crie um ambiente virtual para instalar as dependências
