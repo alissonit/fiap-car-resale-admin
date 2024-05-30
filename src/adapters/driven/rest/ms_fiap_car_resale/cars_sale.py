@@ -1,7 +1,9 @@
 import requests
-
+import os
 from src.application.models.car import Car
 from src.utils.parsers import car_parser
+
+from src.configuration.settings import FIAP_SALE_URL
 
 
 class CarSaleAdapter:
@@ -10,7 +12,7 @@ class CarSaleAdapter:
     """
 
     def __init__(self) -> None:
-        self.car_sale_uri = "http://localhost:7000/fiap-car-resale/api/v1"
+        self.car_sale_uri = f"{FIAP_SALE_URL}/fiap-car-resale/api/v1"
 
     async def get_sales(self) -> Car:
 

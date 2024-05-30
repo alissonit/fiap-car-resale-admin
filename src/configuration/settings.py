@@ -1,7 +1,9 @@
 from functools import lru_cache
 from typing import Optional
-
+import os
 from pydantic_settings import BaseSettings
+
+FIAP_SALE_URL = os.environ["FIAP_SALE_URL"] or "http://localhost:8000"
 
 
 class DBSettings(BaseSettings):
