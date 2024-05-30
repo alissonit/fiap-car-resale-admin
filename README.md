@@ -118,3 +118,7 @@ Recursos criados no Openshift:
 ### Desenho da arquitetura Hexagonal
 
 ![image](/images/arquitetura-hexagonal.png)
+
+### Evidência do banco de dados
+
+![image](/images/fiap-resale-admin-db.png)
