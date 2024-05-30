@@ -114,3 +114,7 @@ Evidências dos recursos criados no Openshift:
 Recursos criados no Openshift:
 
 [Kubernetes Resources](/infrastructure/kubernetes-openshift)
+
+### Desenho da arquitetura Hexagonal
+
+![image](/images/arquitetura-hexagonal.png)
