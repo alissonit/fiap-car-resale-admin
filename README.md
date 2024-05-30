@@ -85,7 +85,7 @@ http://localhost:8000/fiap-car-resale/admin/api/v1/docs
 
 # Evidências
 
-### Coberura de testes em 80%
+### Cobertura de testes em 80%
 ![image](/images/coverage-80.png)
 
 link do html da cobertura de testes:
@@ -119,6 +119,3 @@ Recursos criados no Openshift:
 
 ![image](/images/arquitetura-hexagonal.png)
 
-### Evidência do banco de dados
-
-![image](/images/fiap-resale-admin-db.png)
