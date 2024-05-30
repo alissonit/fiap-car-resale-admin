@@ -119,3 +119,7 @@ Recursos criados no Openshift:
 
 ![image](/images/arquitetura-hexagonal.png)
 
+### Banco de dados
+
+![image](/images/fiap-resale-admin-db.png)
+
